@@ -21,7 +21,7 @@ const Body = () => {
 </section>
 <section className='mb-5 mx-auto'>
     <div className="h-96 text-black flex flex-col w-screen mx-auto p-12">
-        <h1 className="text-5xl  mx-auto">Services</h1>
+        <h1 className="text-5xl  mx-auto">Our Services</h1>
         <div className="flex flex-row mt-10 space-x-4 mx-auto">
             
 
