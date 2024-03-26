@@ -4,6 +4,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Logo from '../../assets/images/logo.png'
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
+import { useEffect,useRef } from 'react';
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -14,7 +17,30 @@ const navigation = [
 ]
 
 export default function Header() { 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const vantaRef = useRef(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE,
+          color: 0x14b679,
+          backgroundColor: 0xededed,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          points: 10.00,
+          maxDistance:20,
+          spacing:20
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destory();
+    };
+  }, [vantaEffect]);
+
 
   return (
     <>
@@ -119,7 +145,7 @@ export default function Header() {
             }}
           />
         </div>
-        <div id="hero" className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div ref={vantaRef} className="mx-auto py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our newest chatbot !{' '}
