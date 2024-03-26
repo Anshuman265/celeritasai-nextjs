@@ -1,13 +1,19 @@
 "use client";
 import React from 'react';
-import Navbar from '../navbar/navbar';
-import Body from '../body/body';
+import Header from '../body/header';
+import FeatureSection from '../featureSection/featureSection';
+import AboutUs from '../aboutus';
+import ContactSales from '../contactSales';
+import FooterSection from '../footerSection';
 
 const Home = () => {
   return (
     <div>
-        <Navbar/>
-        <Body/>
+        <Header/>
+        <FeatureSection/>
+        <AboutUs/>
+        <ContactSales/>
+        <FooterSection/>
     </div>
   )
 }
