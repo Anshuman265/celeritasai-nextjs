@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import Logo from '../../assets/images/logo.png'
 
