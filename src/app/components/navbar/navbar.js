@@ -3,8 +3,19 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import Logo from '../../assets/images/logo.png'
+import { useState } from 'react'
+
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Our Products', href: 'products' },
+  { name: 'Press Releases', href: '/press' },
+]
+
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">

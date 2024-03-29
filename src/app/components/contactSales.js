@@ -1,18 +1,6 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+"use client";
 import { useState } from 'react'
+import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 
@@ -21,9 +9,50 @@ function classNames(...classes) {
 }
 
 export default function ContactSales() {
-  const [agreed, setAgreed] = useState(false)
+  const [agreed, setAgreed] = useState(false);
+  //const router = useRouter();
+  const [firstName,setFirstName] = useState('');
+  const [lastName,setLastName] = useState('');
+  const [company,setCompany] = useState('');
+  const [email,setEmail] = useState('');
+  const [phoneNumber,setphoneNumber] = useState('');
+  const [message,setMessage] = useState('');
 
-  return (
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      firstName,
+      lastName,
+      company,
+      email,
+      phoneNumber,
+      message
+    }
+    setFirstName('');
+    setLastName('');
+    setCompany('');
+    setEmail('');
+    setphoneNumber('');
+    setMessage('');
+    
+    const res = await fetch('/api/contact', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({data})
+     });
+     if(res.status === 200) {
+       console.log("Mail has been sent");
+     } else {
+       alert("Error submitting form");
+    }
+  };
+
+
+
+
+return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -40,10 +69,10 @@ export default function ContactSales() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
+        We believe that growth lies in continuous innovation and making easier to access Artificial Intelligence
         </p>
       </div>
-      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form action="#" method="POST" onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -51,12 +80,15 @@ export default function ContactSales() {
             </label>
             <div className="mt-2.5">
               <input
+                required
                 type="text"
                 name="first-name"
                 id="first-name"
                 autoComplete="given-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
+                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+             />
             </div>
           </div>
           <div>
@@ -65,11 +97,14 @@ export default function ContactSales() {
             </label>
             <div className="mt-2.5">
               <input
+                required
                 type="text"
                 name="last-name"
                 id="last-name"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
               />
             </div>
           </div>
@@ -84,6 +119,8 @@ export default function ContactSales() {
                 id="company"
                 autoComplete="organization"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                onChange={(e) => setCompany(e.target.value)}
+                value={company}
               />
             </div>
           </div>
@@ -98,6 +135,8 @@ export default function ContactSales() {
                 id="email"
                 autoComplete="email"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
           </div>
@@ -115,7 +154,7 @@ export default function ContactSales() {
                   name="country"
                   className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 >
-                  <option>US</option>
+                  <option>IN</option>
                   <option>CA</option>
                   <option>EU</option>
                 </select>
@@ -130,6 +169,8 @@ export default function ContactSales() {
                 id="phone-number"
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                onChange={(e) => setphoneNumber(e.target.value)}
+                value={phoneNumber}
               />
             </div>
           </div>
@@ -144,6 +185,8 @@ export default function ContactSales() {
                 rows={4}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={''}
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
               />
             </div>
           </div>

@@ -9,11 +9,11 @@ import * as THREE from "three";
 import { useEffect,useRef } from 'react';
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'About Us', href: '#' },
-  { name: 'Our Products', href: '#' },
-  { name: 'Press Releases', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Our Products', href: 'products' },
+  { name: 'Press Releases', href: '/press' },
 ]
 
 export default function Header() { 

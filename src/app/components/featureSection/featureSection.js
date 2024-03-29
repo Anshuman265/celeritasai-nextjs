@@ -5,25 +5,25 @@ const features = [
   {
     name: 'Cyber Security',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+      'We provide technical consultancy & services in the field of Automotive Engineering',
     icon: CloudArrowUpIcon,
   },
   {
     name: 'Validation & Verification',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+      'Validation ensures that the system meets the user\'s needs, while verification ensures that the system meets the specified requirements.',
     icon: LockClosedIcon,
   },
   {
     name: 'IoT & Connected Cars',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      'In the realm of IoT and connected cars, seamless integration and data security are paramount for ensuring safe and efficient transportation in our increasingly interconnected world.',
     icon: ArrowPathIcon,
   },
   {
     name: 'Fully Customizable',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Fully customizable solutions empower users to tailor their experience precisely to their unique preferences and requirements, enhancing flexibility and usability across diverse contexts.',
     icon: FingerPrintIcon,
   },
 ]
