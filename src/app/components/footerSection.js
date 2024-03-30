@@ -53,7 +53,7 @@ const FooterSection = () => {
                 Instagram
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/celeritas-ai-1a3837247/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white hover:text-gray-300"
@@ -65,7 +65,7 @@ const FooterSection = () => {
           <div className="w-full md:w-auto">
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <p className="mb-4">
-              <span className="font-bold">Phone:</span> +1 (123) 456-7890
+              <span className="font-bold">Phone:</span> +91-836 9144 723
             </p>
             <p className="mb-4">
               <span className="font-bold">Email:</span> business [at] theceleritasai.com
