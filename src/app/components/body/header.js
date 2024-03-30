@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'About Us', href: '/about' },
   { name: 'Our Products', href: 'products' },
-  { name: 'Press Releases', href: '/press' },
+  { name: 'AI Blog', href: '/press' },
 ]
 
 export default function Header() { 
