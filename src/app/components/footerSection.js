@@ -9,7 +9,7 @@ const FooterSection = () => {
           <div className="w-full md:w-auto">
             <h3 className="text-xl font-bold mb-4">CeleritasAI</h3>
             <p className="mb-4">
-            We provide technical consultancy & services in the field of Automotive Engineering with following Expertise
+              Copyright © 2024 The Celeritas AI. All Rights Reserved.
             </p>
             {/*
             <div className="flex space-x-4">
@@ -68,10 +68,10 @@ const FooterSection = () => {
               <span className="font-bold">Phone:</span> +1 (123) 456-7890
             </p>
             <p className="mb-4">
-              <span className="font-bold">Email:</span> info@mywebsite.com
+              <span className="font-bold">Email:</span> business [at] theceleritasai.com
             </p>
             <p>
-              <span className="font-bold">Address:</span> 123 Main Street, City,
+              <span className="font-bold">Address:</span> Mumbai,India
               Country
             </p>
           </div>
