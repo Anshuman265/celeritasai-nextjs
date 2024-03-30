@@ -1,30 +1,26 @@
 "use client";
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { GlobeAsiaAustraliaIcon, ChartBarIcon, FingerPrintIcon, ChartPieIcon, CpuChipIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Cyber Security',
-    description:
-      'We provide technical consultancy & services in the field of Automotive Engineering',
-    icon: CloudArrowUpIcon,
+    name: 'AI/ML Software Development',
+    description: ['Artificial Intelligence','Machine Learning','Deep Learning use cases for various industries throughLLM, Time Series & Computer Vision Models'],
+    icon: CpuChipIcon,
   },
   {
-    name: 'Validation & Verification',
-    description:
-      'Validation ensures that the system meets the user\'s needs, while verification ensures that the system meets the specified requirements.',
-    icon: LockClosedIcon,
+    name: 'Marketing Analytics using AI/ML powered technology',
+    description: ['Full Funnel Analytics','Data Integration and Automated Dashboard Development','Ceaseless Monitoring and Evaluation'], 
+    icon: ChartBarIcon,
   },
   {
-    name: 'IoT & Connected Cars',
-    description:
-      'In the realm of IoT and connected cars, seamless integration and data security are paramount for ensuring safe and efficient transportation in our increasingly interconnected world.',
-    icon: ArrowPathIcon,
+    name: 'Data Science and Data Engineering',
+    description: ['Data Discovery','Augmented Analytics','Data Intelligence'],
+    icon: ChartPieIcon,
   },
   {
-    name: 'Fully Customizable',
-    description:
-      'Fully customizable solutions empower users to tailor their experience precisely to their unique preferences and requirements, enhancing flexibility and usability across diverse contexts.',
-    icon: FingerPrintIcon,
+    name: 'Strategic Management',
+    description: ['Business Model Transformation','Corporate and Sustainable Strategy','Financial Strategy Formulation'],
+    icon: GlobeAsiaAustraliaIcon,
   },
 ]
 
@@ -33,16 +29,14 @@ export default function FeatureSection() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">Our Services</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-               Automotive Engineering & Technical Consultancy
-          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-indigo-600">Our Services</h2>
+
           <p className="mt-6 text-lg leading-8 text-gray-600">
-          We provide technical consultancy & services in the field of Automotive Engineering with following Expertise
+            Our vision is to develop and provide smart and efficient automated solutions for the end users
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+          <dl className="list-disc grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
@@ -51,7 +45,9 @@ export default function FeatureSection() {
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
+                {feature.description.map((item,i) => (
+                  <li key={i} className="mt-2 text-base leading-7 text-gray-600">{item}</li>
+                ))}
               </div>
             ))}
           </dl>
