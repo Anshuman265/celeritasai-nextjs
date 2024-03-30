@@ -2,6 +2,29 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
+import Product from '../components/product';
+
+const products = [
+  {
+    name: 'KUBER',
+    intro: 'KUBER is AI/ML and Deep Learning based trading assistance for Stock Market Analysis and Stock Prices Prediction.',
+    features: ['Voice Based Trading Assistance Enabled: Integrated with Alexa and Google Assistance','Configurable: Long, Mid, Short term Investors','Cloud Based & API based Services'],
+    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+  },
+  {
+    name: 'Marketing Analytics using AI/ML powered technology',
+    description: ['Full Funnel Analytics','Data Integration and Automated Dashboard Development','Ceaseless Monitoring and Evaluation'], 
+  },
+  {
+    name: 'Data Science and Data Engineering',
+    description: ['Data Discovery','Augmented Analytics','Data Intelligence'],
+  },
+  {
+    name: 'Strategic Management',
+    description: ['Business Model Transformation','Corporate and Sustainable Strategy','Financial Strategy Formulation'],
+  },
+]
+
 
 
 const Home = () => {
@@ -28,20 +51,10 @@ const Home = () => {
                 Our products
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
+                We believe that growth lies in continuous innovation and
+                making easier to access technology to each and everyone
+                by providing them realy simple medium of access
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
-              </div>
             </div>
           </div>
           <div
@@ -57,6 +70,11 @@ const Home = () => {
             />
           </div>
         </div>
+      </div>
+      <div className='p-10 bg-black'>
+        {products.map((product,i) => (
+          <Product imgurl={product.imgSrc} name={product.name}  key={i} />
+        ))}
       </div>
     <FooterSection/>
     </div>

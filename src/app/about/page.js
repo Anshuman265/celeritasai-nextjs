@@ -28,8 +28,7 @@ const Home = () => {
                 About Us
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
+              We believe that growth lies in continuous innovation and making easier to access technology to each and everyone by providing them realy simple medium of access
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
