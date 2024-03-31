@@ -1,15 +1,27 @@
 import React from "react";
+import Image from 'next/image'
 
 const Product = (props) => {
   return (
-    <>
-      <section className="text-center bg-white relative text-black z-10 overflow-hidden p-20 lg:py-[120px]">
-      <div className="grid grid-cols-2 gap-* bg-black p-15">
-            <img src={props.imageSrc} alt="#9089fc" height={300} width={300}/>
-            <div>{props.name}</div>
-        </div>
+    <div>
+      <section className="bg-white relative text-black z-10 overflow-hidden p-20 lg:py-[120px]">
+      <div className="flex flex-row grid grid-cols-2 gap-* p-15 space-x-5">
+        <Image className="" src={props.imgurl} alt="#9089fc" height={450} width={450} style={{ borderRadius: '25%'}}/>
+              <div>
+                 <h1 className="text-3xl text-center font-black"> {props.name} </h1> 
+                 <br></br>
+                 <div className="text-xl"> {props.intro} </div> 
+                 <br></br>
+                 <div className="font-black text-xl">Features:</div>
+                 <ul className="list-disc text-lg">
+                    {props.features.map((feature,i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                 </ul>
+              </div>
+      </div>
       </section>
-    </>
+    </div>
   );
 };
 

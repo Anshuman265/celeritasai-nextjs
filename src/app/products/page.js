@@ -1,30 +1,53 @@
 "use client";
 import React from 'react';
+import Image from 'next/image'
 import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
 import Product from '../components/product';
+import IRIS from '../assets/images/iris.png';
+import Kuber from '../assets/images/kuber.png';
+import Vircalp from '../assets/images/vircalp.png';
+import Tota from '../assets/images/tota.jpg';
 
 const products = [
   {
     name: 'TOTA',
-    description: ['Full Funnel Analytics','Data Integration and Automated Dashboard Development','Ceaseless Monitoring and Evaluation'], 
-    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+    intro: 'In-house Deployment with state-of-the-art LLM Technology (private/public cloud platform)',
+    features: [
+      " Using the state-of-the-art open-source software to generate question-answer pairs from the text  and then check the overlap of the user’s question with the generated question and identify the corresponding answer with maximum overlap as chatbot’s response.",
+      " Using pre-trained models: Roberta/BERT/LAMA2 with text as context for generation of answer to user’s question",
+      "Lastly, Fine tuning the pre-trained models with content scrapped from urls."
+    ], 
+    imgurl: Tota
   },
   {
     name: 'KUBER',
     intro: 'KUBER is AI/ML and Deep Learning based trading assistance for Stock Market Analysis and Stock Prices Prediction.',
-    features: ['Voice Based Trading Assistance Enabled: Integrated with Alexa and Google Assistance','Configurable: Long, Mid, Short term Investors','Cloud Based & API based Services'],
-    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+    features: [
+      "Voice Based Trading Assistance Enabled: Integrated with Alexa and Google Assistance','Configurable: Long, Mid, Short term Investors','Cloud Based & API based Services",
+      "Configurable: Long, Mid, Short term Investors",
+      "Cloud Based & API based Services"
+    ],
+    imgurl: Kuber
   },
   {
-    name: 'Data Science and Data Engineering',
-    description: ['Data Discovery','Augmented Analytics','Data Intelligence'],
-    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+    name: 'IRIS',
+    intro: 'IRIS is an AI-powered e-commerce recommendation system, utilizing machine learning and a Smart Mailer Engine to suggest trending products to online shoppers.',
+    features: [
+      "IRIS is Intelligent e-commerce Recommend-er Information System, based on AI/ML technologies integrated with Smart Mailer Engine (SME) for suggesting hot-products on e-commerce platforms to their customers."
+    ],
+    imgurl: IRIS
   },
   {
-    name: 'Strategic Management',
-    description: ['Business Model Transformation','Corporate and Sustainable Strategy','Financial Strategy Formulation'],
-    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+    name: 'Vircalp',
+    intro: 'VIRCALP AUTO is AI/ML based virtual calibration platform for Automotive OEMs.',
+    features: [
+      "It enables co-simulation while calibrating Controllers with Plant Models",
+      "Reduce V-Cycle time, cost & efforts",
+      "Reduce Software Development Cost, time & Efforts",
+      "On-Road Vehicle Development/ Off-Road (Agro-Tech) Vehicle Development​"
+    ],
+    imgurl:  Vircalp
   },
 ]
 
@@ -74,9 +97,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='p-10 bg-black'>
+      <div className='p-10 bg-white'>
         {products.map((product,i) => (
-          <Product imgurl={product.imgSrc} name={product.name}  key={i} />
+          <Product imgurl={product.imgurl} intro={product.intro} name={product.name}  key={i} features={product.features}/>
         ))}
       </div>
     <FooterSection/>
