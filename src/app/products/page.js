@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
 import Product from '../components/product';
-import IRIS from '/public/assets/images/iris.png';
-import Kuber from '/public/assets/images/kuber.png';
-import Vircalp from '/public/assets/images/vircalp.png';
-import Tota from '/public/assets/images/tota.jpg';
+import IRIS from '/public/static/images/iris.png';
+import Kuber from '/public/static/images/kuber.png';
+import Vircalp from '/public/static/images/vircalp.png';
+import Tota from '/public/static/images/tota.jpg';
 
 const products = [
   {
@@ -18,7 +18,7 @@ const products = [
       " Using pre-trained models: Roberta/BERT/LAMA2 with text as context for generation of answer to user’s question",
       " Lastly, Fine tuning the pre-trained models with content scrapped from urls."
     ], 
-    imgurl: Tota
+    imgurl: "/static/images/tota.jpg"
   },
   {
     name: 'KUBER',
@@ -28,7 +28,7 @@ const products = [
       "Configurable: Long, Mid, Short term Investors",
       "Cloud Based & API based Services"
     ],
-    imgurl: Kuber
+    imgurl: "/static/images/kuber.png"
   },
   {
     name: 'IRIS',
@@ -36,7 +36,7 @@ const products = [
     features: [
       "IRIS is Intelligent e-commerce Recommend-er Information System, based on AI/ML technologies integrated with Smart Mailer Engine (SME) for suggesting hot-products on e-commerce platforms to their customers."
     ],
-    imgurl: IRIS
+    imgurl: "/static/images/IRIS.png"
   },
   {
     name: 'Vircalp',
@@ -47,7 +47,7 @@ const products = [
       "Reduce Software Development Cost, time & Efforts",
       "On-Road Vehicle Development/ Off-Road (Agro-Tech) Vehicle Development​"
     ],
-    imgurl:  Vircalp
+    imgurl:  "/static/images/Vircalp.png"
   },
 ]
 
