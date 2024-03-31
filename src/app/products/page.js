@@ -24,7 +24,7 @@ const products = [
       "Configurable: Long, Mid, Short term Investors",
       "Cloud Based & API based Services"
     ],
-    imgurl: "/static/images/kuber.png"
+    imgurl: "/static/images/Kuber.png"
   },
   {
     name: 'IRIS',
