@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
 import Product from '../components/product';
-import IRIS from '../assets/images/iris.png';
-import Kuber from '../assets/images/kuber.png';
-import Vircalp from '../assets/images/vircalp.png';
-import Tota from '../assets/images/tota.jpg';
+import IRIS from '/public/assets/images/iris.png';
+import Kuber from '/public/assets/images/kuber.png';
+import Vircalp from '/public/assets/images/vircalp.png';
+import Tota from '/public/assets/images/tota.jpg';
 
 const products = [
   {
@@ -16,7 +16,7 @@ const products = [
     features: [
       " Using the state-of-the-art open-source software to generate question-answer pairs from the text  and then check the overlap of the user’s question with the generated question and identify the corresponding answer with maximum overlap as chatbot’s response.",
       " Using pre-trained models: Roberta/BERT/LAMA2 with text as context for generation of answer to user’s question",
-      "Lastly, Fine tuning the pre-trained models with content scrapped from urls."
+      " Lastly, Fine tuning the pre-trained models with content scrapped from urls."
     ], 
     imgurl: Tota
   },
