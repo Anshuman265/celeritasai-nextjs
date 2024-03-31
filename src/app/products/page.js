@@ -4,10 +4,6 @@ import Image from 'next/image'
 import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
 import Product from '../components/product';
-import IRIS from '/public/static/images/iris.png';
-import Kuber from '/public/static/images/kuber.png';
-import Vircalp from '/public/static/images/vircalp.png';
-import Tota from '/public/static/images/tota.jpg';
 
 const products = [
   {
