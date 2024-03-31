@@ -6,22 +6,25 @@ import Product from '../components/product';
 
 const products = [
   {
+    name: 'TOTA',
+    description: ['Full Funnel Analytics','Data Integration and Automated Dashboard Development','Ceaseless Monitoring and Evaluation'], 
+    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
+  },
+  {
     name: 'KUBER',
     intro: 'KUBER is AI/ML and Deep Learning based trading assistance for Stock Market Analysis and Stock Prices Prediction.',
     features: ['Voice Based Trading Assistance Enabled: Integrated with Alexa and Google Assistance','Configurable: Long, Mid, Short term Investors','Cloud Based & API based Services'],
     imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
   },
   {
-    name: 'Marketing Analytics using AI/ML powered technology',
-    description: ['Full Funnel Analytics','Data Integration and Automated Dashboard Development','Ceaseless Monitoring and Evaluation'], 
-  },
-  {
     name: 'Data Science and Data Engineering',
     description: ['Data Discovery','Augmented Analytics','Data Intelligence'],
+    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
   },
   {
     name: 'Strategic Management',
     description: ['Business Model Transformation','Corporate and Sustainable Strategy','Financial Strategy Formulation'],
+    imgurl: 'https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwMzV8MHwxfGFsbHwxf'
   },
 ]
 

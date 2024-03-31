@@ -71,8 +71,7 @@ const FooterSection = () => {
               <span className="font-bold">Email:</span> business [at] theceleritasai.com
             </p>
             <p>
-              <span className="font-bold">Address:</span> Mumbai,India
-              Country
+              <span className="font-bold">Address:</span> Mumbai, India
             </p>
           </div>
         </div>
