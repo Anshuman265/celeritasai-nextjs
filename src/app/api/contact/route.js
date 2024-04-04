@@ -18,23 +18,19 @@ export async function POST(request) {
     // create transporter object
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        port: 587,
-        tls: {
-            ciphers: "SSLv3",
-            rejectUnauthorized: false,
-        },
-
+        secure: true,
+        port: 465,
         auth: {
-            user: username,
-            pass: password
-        }
+            user: "anshv.iitb@gmail.com",
+            pass: "",
+        },
     });
 
     try {
 
         const mail = await transporter.sendMail({
             from: username,
-            to: myEmail,
+            to: email,
             replyTo: email,
             subject: `Website activity from ${email}`,
             html: `
