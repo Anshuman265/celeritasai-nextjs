@@ -10,9 +10,6 @@ import { useEffect,useRef } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Our Products', href: 'products' },
   { name: 'AI Blog', href: '/press' },
 ]
 
@@ -51,10 +48,10 @@ export default function Header() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
-                className="h-12 w-auto"
+                className="h-14 w-auto"
                 src={Logo}
-                width={800}
-                height={800}
+                width={900}
+                height={900}
                 alt=""
               />
             </a>
@@ -69,16 +66,13 @@ export default function Header() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-                {item.name}
-              </a>
-            ))}
-          </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#contactSales" className="text-sm font-semibold leading-6 text-gray-900">
-              Contact Us <span aria-hidden="true">&rarr;</span>
+            <a href="/press" className="text-xl font-semibold leading-6 text-gray-900">
+              AI Blog
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#contactSales" className="text-xl font-semibold leading-6 text-gray-900">
+              Contact Us
             </a>
           </div>
         </nav>
@@ -132,7 +126,7 @@ export default function Header() {
         </Dialog>
       </header>
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="isolate relative pt-14">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
@@ -191,6 +185,7 @@ export default function Header() {
           />
         </div>
       </div>
+      
     </div>
     </>
   )

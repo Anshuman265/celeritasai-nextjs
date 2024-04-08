@@ -10,7 +10,7 @@ export async function POST(request) {
     const body = await request.json();
     const firstName = body['data']['firstName'];
     const lastName = body['data']['lastName'];
-    const company = body['data']['company'];
+    // const company = body['data']['company'];
     const email = body['data']['email'];
     const message = body['data']['message'];
     console.log(`name: ${firstName} ${lastName}`);
@@ -22,7 +22,7 @@ export async function POST(request) {
         port: 465,
         auth: {
             user: "anshv.iitb@gmail.com",
-            pass: "",
+            pass: "xpoo wzxf icxr zjme",
         },
     });
 
@@ -37,7 +37,6 @@ export async function POST(request) {
             <p>Name: ${firstName} ${lastName} </p>
             <p>Email: ${email} </p>
             <p>Message: ${message} </p>
-            <p>Company: ${company} </p>
             `,
         })
 

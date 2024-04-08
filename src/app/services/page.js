@@ -4,7 +4,7 @@ import Navbar from '../components/navbar/navbar';
 import FooterSection from '../components/footerSection';
 
 
-const Home = () => {
+const Services = () => {
   return (
     <div>
     <Navbar/>
@@ -62,4 +62,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Services;
