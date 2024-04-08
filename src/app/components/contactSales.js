@@ -27,8 +27,6 @@ export default function ContactSales() {
     /*
       Save to database,asynchorously work with sending email
     */
-
-
   try {
       const db_res = await fetch('/api/db', {
         method: 'POST',
@@ -39,6 +37,7 @@ export default function ContactSales() {
       });
       if(db_res.status === 200) {
         console.log("Data saved successfully!");
+        alert("Data saved successfully in the database!");
         // alert("An executive will connect with you shortly");
       } else {
         alert("Error saving data in database");
@@ -46,7 +45,6 @@ export default function ContactSales() {
     }catch (error) {
       console.log(error);
   }
-
 
   try {
     const email_res = await fetch('/api/sendemail', {
