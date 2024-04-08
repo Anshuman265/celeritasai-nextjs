@@ -19,7 +19,7 @@ export default function ContactSales() {
       phoneNumber,
       message
     }
-    setLastName('');
+    setName('');
     setEmail('');
     setphoneNumber('');
     setMessage('');
@@ -27,20 +27,45 @@ export default function ContactSales() {
     /*
       Save to database,asynchorously work with sending email
     */
-    const res = await fetch('/api/contact', {
-       method: 'POST',
-       headers: {
-         'Content-Type': 'application/json'
-       },
-       body: JSON.stringify({data})
-     });
-     if(res.status === 200) {
-       console.log("Mail has been sent");
-       alert("An executive will connect with you shortly");
-     } else {
-       alert("Error submitting form");
-    }
-  };
+
+
+  try {
+      const db_res = await fetch('/api/db', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({data})
+      });
+      if(db_res.status === 200) {
+        console.log("Data saved successfully!");
+        // alert("An executive will connect with you shortly");
+      } else {
+        alert("Error saving data in database");
+     }
+    }catch (error) {
+      console.log(error);
+  }
+
+
+  try {
+    const email_res = await fetch('/api/sendemail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({data})
+    });
+    if(email_res.status === 200) {
+      console.log("Mail has been sent");
+      alert("An executive will connect with you shortly");
+    } else {
+      alert("Error sending email,please contact us via the given phone number!");
+   }
+  }catch (error) {
+    console.log(error);
+  }
+};
 
 return (
     <div id="contactSales" className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
