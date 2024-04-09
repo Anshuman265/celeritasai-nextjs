@@ -28,23 +28,33 @@ export async function POST(request) {
             pass: password,
         },
     });
-
+    // Send the CC mail to sales , send the customer an acknowledgment mail to the customer
     try {
-        const mail = await transporter.sendMail({
+        const mail2 = await transporter.sendMail({
             from: username,
             to: email,
-            replyTo: email,
-            subject: `Website activity from ${email}`,
+            replyTo: username,
+            subject: `Thank you for reaching out to us`,
             html: `
-            <p>Name: ${firstName}</p>
-            <p>Email: ${email} </p>
-            <p>Message: ${message} </p>
-            <p>Phone number: ${phoneNumber} </p>
+               <p>Thank you very much for reaching out to us. We will get back to you as soon as possible.</p>
             `,
-        })
+        },
+    {
+        from: username,
+        to: username,
+        replyTo: username,
+        subject: `Website activity from ${email}`,
+        html: `
+        <p>Name: ${firstName}</p>
+        <p>Email: ${email} </p>
+        <p>Message: ${message} </p>
+        <p>Phone number: ${phoneNumber} </p>
+        `,
+    })
         return NextResponse.json({ message: "Success: email was sent" })
     } catch (error) {
         console.log(error)
         NextResponse.status(500).json({ message: "COULD NOT SEND MESSAGE" })
     }
+
 }

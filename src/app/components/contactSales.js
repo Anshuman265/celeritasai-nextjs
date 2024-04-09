@@ -61,6 +61,7 @@ export default function ContactSales() {
       alert("Error sending email,please contact us via the given phone number!");
    }
   }catch (error) {
+    // Catch block mei different error status code daalte rehna 
     console.log(error);
   }
 };

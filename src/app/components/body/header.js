@@ -10,7 +10,7 @@ import { useEffect,useRef } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'AI Blog', href: '/press' },
+  { name: 'AI Blog', href: '/blog' },
 ]
 
 export default function Header() { 

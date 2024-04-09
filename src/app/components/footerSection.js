@@ -28,6 +28,7 @@ const FooterSection = () => {
           <div className="w-full md:w-auto">
             <h3 className="text-xl font-bold mb-4">Social Media</h3>
             <div className="flex space-x-4">
+              {/*
               <a
                 href="https://www.facebook.com"
                 target="_blank"
@@ -52,6 +53,7 @@ const FooterSection = () => {
               >
                 Instagram
               </a>
+        */}
               <a
                 href="https://www.linkedin.com/in/celeritas-ai-1a3837247/"
                 target="_blank"
@@ -71,7 +73,7 @@ const FooterSection = () => {
               <span className="font-bold">Email:</span> business [at] theceleritasai.com
             </p>
             <p>
-              <span className="font-bold">Address:</span> Mumbai, India
+              <span className="font-bold">Address:</span> Address: Flat No. C-503, C- Wing, Bhoomi Gardenia-2, Sector- 20, Roadpali, Navi Mumbai-410218
             </p>
           </div>
         </div>
